@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 13:37:54 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/12/27 21:49:34 by aait-oma         ###   ########.fr       */
+/*   Updated: 2021/12/29 16:54:26 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ void	ft_push(t_stack **stk, t_stack *new);
 t_stack	*ft_pop(t_stack **stack);
 t_stack	*ft_stklast(t_stack *stk);
 t_stack	*ft_stknew(int	*nbr);
+t_stack	*ft_stk_beforelast(t_stack *stk);
 
 #endif

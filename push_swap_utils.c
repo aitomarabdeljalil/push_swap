@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:20:07 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/12/28 11:38:26 by aait-oma         ###   ########.fr       */
+/*   Updated: 2021/12/29 19:01:45 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ void	swap_rrs(t_stack **stack)
 
 	last = ft_stklast(*stack);
 	head = *stack;
-	second = head->next;
+	beflast = ft_stk_beforelast(*stack);
 
 	last->next = head;
-	head->next = NULL;
-	*stack = second;
+	beflast->next = NULL;
+	*stack = last;
 }
 
 void	swap_rrr(t_stack **stacka, t_stack **stackb)
@@ -70,3 +70,8 @@ void	swap_rrr(t_stack **stacka, t_stack **stackb)
 	swap_rrs(stacka);
 	swap_rrs(stackb);
 }
+
+// void	swap_p(t_stack **)
+// {
+// 	ft_pop()
+// }
