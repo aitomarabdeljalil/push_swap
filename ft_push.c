@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 15:57:59 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/12/27 19:42:41 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/01/02 17:10:50 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_push(t_stack **stack, t_stack *new)
 {
-	new->next = *stack;
-	*stack = new;
+	if (new)
+	{
+		new->next = *stack;
+		*stack = new;
+	}
 }

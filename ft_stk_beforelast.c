@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 16:51:49 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/12/29 16:43:15 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/01/01 18:20:18 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*ft_stk_beforelast(t_stack *stk)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = stk;
 	if (tmp || tmp->next != NULL)
