@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stksize.c                                       :+:      :+:    :+:   */
+/*   ft_isemty.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/27 17:18:40 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/12/27 17:18:51 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/01/11 19:28:24 by marvin            #+#    #+#             */
+/*   Updated: 2022/01/11 19:28:24 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	ft_stksize(t_stack *stk)
+int ft_isemty(t_stack **stack)
 {
-	int		count;
-	t_stack	*s;
-
-	count = 0;
-	s = stk;
-	while (s)
-	{
-		s = s->next;
-		count++;
-	}
-	return (count);
+	if (*stack)
+		return (1);
+	else
+		return (0);
 }

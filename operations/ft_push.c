@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pop.c                                           :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/27 18:58:53 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/12/27 21:50:44 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/01/11 19:09:37 by marvin            #+#    #+#             */
+/*   Updated: 2022/01/11 19:09:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-t_stack	*ft_pop(t_stack **stack)
+void	ft_push(t_stack **stack, int value)
 {
-	t_stack	*p;
+	t_stack	*node;
 
-	p = *stack;
-	if (p)
+	node = malloc(sizeof(t_stack));
+	if (node == NULL)
+		write(1, "Error", 5);
+	else
 	{
-		*stack = p->next;
-		p->next = NULL;
+		node->nbr = value;
+		node->markup = false;
+		node->next = *stack;
+		*stack = node;
 	}
-	return (p);
 }

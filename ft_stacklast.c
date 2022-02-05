@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stk_beforelast.c                                :+:      :+:    :+:   */
+/*   ft_stacklast.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/28 16:51:49 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/01/01 18:20:18 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/01/19 11:36:06 by marvin            #+#    #+#             */
+/*   Updated: 2022/01/19 11:36:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_stk_beforelast(t_stack *stk)
+t_stack *ft_stacklast(t_stack **stack)
 {
-	t_stack	*tmp;
+    t_stack *stk;
 
-	tmp = stk;
-	if (tmp || tmp->next != NULL)
+    if (ft_isemty(stack))
 	{
-		while (tmp->next)
-		{
-			if (tmp->next->next == NULL)
-				return (tmp);
-			tmp = tmp->next;
-		}
+        stk = *stack;
+		while (stk->next)
+			stk = stk->next;
 	}
-	return (tmp);
+	return (stk);
 }

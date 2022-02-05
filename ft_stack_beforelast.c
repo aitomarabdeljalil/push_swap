@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stknew.c                                        :+:      :+:    :+:   */
+/*   ft_stack_beforelast.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/27 17:38:17 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/01/06 17:24:00 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/01/19 16:46:10 by marvin            #+#    #+#             */
+/*   Updated: 2022/01/19 16:46:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_stknew(int	nbr)
+t_stack	*ft_stack_beforelast(t_stack **stack)
 {
-	t_stack	*p;
+	t_stack	*tmp;
 
-	p = malloc(sizeof(t_stack));
-	if (p)
+	tmp = *stack;
+	if (tmp || tmp->next != NULL)
 	{
-		p->nbr = nbr;
-		p->next = NULL;
+		while (tmp->next)
+		{
+			if (tmp->next->next == NULL)
+				return (tmp);
+			tmp = tmp->next;
+		}
 	}
-	return (p);
+	return (tmp);
 }

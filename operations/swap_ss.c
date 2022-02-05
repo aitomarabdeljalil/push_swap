@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   swap_ss.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 18:45:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/01/19 18:45:29 by marvin           ###   ########.fr       */
+/*   Created: 2022/01/11 22:07:14 by marvin            #+#    #+#             */
+/*   Updated: 2022/01/11 22:07:14 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-static int	swap_sa_mark(t_stack **stack)
+static int	swap_sa(t_stack **stack)
 {
 	t_stack	*head;
 	t_stack	*second;
 
     if (ft_stacksize(*stack) >= 2)
     {
-		head = *stack;
+        head = *stack;
         second = head->next;
         head->next = second->next;
         second->next = head;
@@ -30,27 +30,33 @@ static int	swap_sa_mark(t_stack **stack)
         return (0);
 }
 
-int	main(int ac, char **av)
+static int	swap_sb(t_stack **stack)
 {
-	t_stack	**a;
-	t_stack	**b;
-	int		i;
-	int		markup_val;
-	int		markup_vals;
+	t_stack	*head;
+	t_stack	*second;
 
-	*a = NULL;
-	*b = NULL;
-	i = ac - 1;
-	while (i > 0)
-		ft_push(a, ft_atoi(av[i--]));
-	markup_val = bast_markup(a);
-	swap_sa_mark(a);
-	markup_vals = bast_markup(a);
-	if (markup_val >= markup_vals)
-		swap_sa_mark(a);
+    if (ft_stacksize(*stack) >= 2)
+    {
+        head = *stack;
+        second = head->next;
+        head->next = second->next;
+        second->next = head;
+        *stack = second;
+        return (1);
+    }
 	else
-		write(1, "sa\n", 3);
-	pushtob(a, b);
-	pushtoa(b, a);
-	alignstack(a);
+        return (0);
+}
+
+void	swap_ss(t_stack **stacka, t_stack **stackb)
+{
+    int sa;
+    int sb;
+
+	sa = swap_sa(stacka);
+	sb = swap_sb(stackb);
+    if (sa == 1 && sb == 1)
+        write(1, "ss\n", 3);
+    else
+        write(1, "Error\n", 6);
 }

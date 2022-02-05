@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   ft_stacknew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 15:57:59 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/01/02 17:10:50 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/01/19 20:26:01 by marvin            #+#    #+#             */
+/*   Updated: 2022/01/19 20:26:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push(t_stack **stack, t_stack *new)
+t_stack	*ft_stacknew(int nbr)
 {
-	if (new)
+	t_stack	*p;
+
+	p = malloc(sizeof(t_stack));
+	if (p)
 	{
-		new->next = *stack;
-		*stack = new;
+		p->nbr = nbr;
+		p->markup = false;
+		p->next = NULL;
 	}
+    else
+        write(1, "Error\n", 6);
+	return (p);
 }

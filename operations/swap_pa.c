@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stklast.c                                       :+:      :+:    :+:   */
+/*   swap_pa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/27 17:39:07 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/12/27 17:40:17 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/01/19 16:52:21 by marvin            #+#    #+#             */
+/*   Updated: 2022/01/19 16:52:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-t_stack	*ft_stklast(t_stack *stk)
+void	swap_pa(t_stack **stackfrom, t_stack **stackto)
 {
-	if (stk)
-	{
-		while (stk->next)
-			stk = stk->next;
-	}
-	return (stk);
+	ft_push(stackto, ft_pop(stackfrom));
+    write(1, "pb\n", 3);
 }
