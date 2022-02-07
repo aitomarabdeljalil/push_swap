@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stacknew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 20:26:01 by marvin            #+#    #+#             */
-/*   Updated: 2022/01/19 20:26:01 by marvin           ###   ########.fr       */
+/*   Updated: 2022/02/07 19:00:06 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_stack	*ft_stacknew(int nbr)
 		p->markup = false;
 		p->next = NULL;
 	}
-    else
-        write(1, "Error\n", 6);
+	else
+		write(1, "Error\n", 6);
 	return (p);
 }

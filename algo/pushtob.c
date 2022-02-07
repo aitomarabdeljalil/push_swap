@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushtob.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aait-oma <aait-oma@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 15:40:38 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/04 15:40:38 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/07 19:36:59 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	pushtob(t_stack **stackfrom, t_stack **stackto)
 			if (index == 1)
 				swap_sa(stackfrom);
 			if (index > 1 && index <= size / 2)
-				while(index--)
-					swap_r(stackfrom);
+				while (index--)
+					swap_ra(stackfrom);
 			else if (index > size / 2)
-				while(index++ < size)
-					swap_rrs(stackfrom);
+				while (index++ < size)
+					swap_rra(stackfrom);
 			swap_pb(stackfrom, stackto);
 		}
 		node = node->next;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 18:45:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/01/19 18:45:29 by marvin           ###   ########.fr       */
+/*   Updated: 2022/02/07 19:02:40 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ static int	swap_sa_mark(t_stack **stack)
 	t_stack	*head;
 	t_stack	*second;
 
-    if (ft_stacksize(*stack) >= 2)
-    {
+	if (ft_stacksize(*stack) >= 2)
+	{
 		head = *stack;
-        second = head->next;
-        head->next = second->next;
-        second->next = head;
-        *stack = second;
-        return (1);
-    }
+		second = head->next;
+		head->next = second->next;
+		second->next = head;
+		*stack = second;
+		return (1);
+	}
 	else
-        return (0);
+		return (0);
 }
 
 int	main(int ac, char **av)

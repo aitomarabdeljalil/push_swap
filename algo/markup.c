@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   markup.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:22:44 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/03 11:22:44 by marvin           ###   ########.fr       */
+/*   Updated: 2022/02/07 19:42:42 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	markup_clear(t_stack *head)
 	}
 }
 
-int		markup(t_stack **stack, t_stack *start)
+int	markup(t_stack **stack, t_stack *start)
 {
 	int	trueval;
 	int	count;
@@ -53,9 +53,9 @@ int		markup(t_stack **stack, t_stack *start)
 int	best_markup(t_stack **stack)
 {
 	t_stack	*node;
-	t_stack *markup_head;
+	t_stack	*markup_head;
 	int		best;
-	int 	curent;
+	int		curent;
 
 	markup_head = *stack;
 	best = markup(stack, markup_head);

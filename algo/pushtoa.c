@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pushtoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aait-oma <aait-oma@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:55:23 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/04 16:55:23 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/07 19:48:26 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,26 @@ t_stack	*get_item(t_stack **stack, int val)
 	res = NULL;
 	while (node)
 	{
-		if(node->nbr > val && (!res || node->nbr < res->nbr))
+		if (node->nbr > val && (!res || node->nbr < res->nbr))
 			res = node;
-		node = node->next
+		node = node->next;
 	}
 	return (res);
 }
 
-int	ft_max(int	fisrt, int sec)
+int	ft_max(int first, int sec)
 {
 	if (first >= sec)
-		return (fisrt);
+		return (first);
 	return (sec);
 }
 
-int		cal_moves(t_stack **stackfrom, t_stack **stackto, int val)
+int	cal_moves(t_stack **stackfrom, t_stack **stackto, int val)
 {
-	int	indexa;
-	int	indexb;
-	int	size_a;
-	int	size_b;
+	int		indexa;
+	int		indexb;
+	int		size_a;
+	int		size_b;
 	t_stack	*node;
 
 	size_b = ft_stacksize(*stackfrom);
@@ -60,10 +60,10 @@ int		cal_moves(t_stack **stackfrom, t_stack **stackto, int val)
 
 void	do_moves(t_stack **stackfrom, t_stack **stackto, int val)
 {
-	int	indexa;
-	int	indexb;
-	int	size_a;
-	int	size_b;
+	int		indexa;
+	int		indexb;
+	int		size_a;
+	int		size_b;
 	t_stack	*node;
 
 	size_b = ft_stacksize(*stackfrom);
@@ -80,17 +80,17 @@ void	do_moves(t_stack **stackfrom, t_stack **stackto, int val)
 	if (indexb <= size_b / 2)
 		do_multiple_swap_r(stackfrom, stackto, node, 'b');
 	if (indexa > size_a / 2)
-		do_multiple_swap_rrs(stackfrom, stackto, node, 'a');
+		do_multiple_swap_rrs(stackfrom, stackto, node, 'a', val);
 	if (indexb > size_b / 2)
-		do_multiple_swap_rrs(stackfrom, stackto, node, 'b');
+		do_multiple_swap_rrs(stackfrom, stackto, node, 'b', val);
 }
 
 void	pushtoa(t_stack **stackfrom, t_stack **stackto)
 {
 	t_stack	*node;
-	t_stack *tokeep;
+	t_stack	*tokeep;
 	int		best;
-	int 	curent;
+	int		curent;
 
 	while (ft_isemty(stackfrom))
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pop.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 19:20:05 by marvin            #+#    #+#             */
-/*   Updated: 2022/01/11 19:20:05 by marvin           ###   ########.fr       */
+/*   Updated: 2022/02/07 14:43:59 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*ft_pop(t_stack **stack)
 {
-    t_stack	*p;
+	t_stack	*p;
 
 	p = *stack;
 	if (p)

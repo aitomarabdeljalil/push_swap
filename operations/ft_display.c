@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_display.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 18:48:37 by marvin            #+#    #+#             */
-/*   Updated: 2022/01/19 18:48:37 by marvin           ###   ########.fr       */
+/*   Updated: 2022/02/07 19:34:47 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_display(t_stack *stack, char c)
 {
 	while (stack)
 	{
-		printf("%d\n",stack->nbr);
+		printf("%d\n", stack->nbr);
 		stack = stack->next;
 	}
 	printf("-------------\n");

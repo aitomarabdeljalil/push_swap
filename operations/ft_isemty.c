@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isemty.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 19:28:24 by marvin            #+#    #+#             */
-/*   Updated: 2022/01/11 19:28:24 by marvin           ###   ########.fr       */
+/*   Updated: 2022/02/07 14:46:24 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int ft_isemty(t_stack **stack)
+int	ft_isemty(t_stack **stack)
 {
 	if (*stack)
 		return (1);
