@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:27:43 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/08 20:21:37 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/09 19:28:48 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	do_split(t_stack **stack, char *arg)
 	array = ft_split(arg, ' ');
 	if (!array || !array[0])
 		ft_memclear(array);
-	while ()
+	while (arg)
 	{
 
 	}
@@ -37,7 +37,7 @@ static t_stack	**check_and_getstack(int argc, char **argv)
 
 	while ()
 	{
-		/* code */
+		
 	}
 
 	return (stack);
