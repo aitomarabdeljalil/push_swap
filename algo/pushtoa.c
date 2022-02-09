@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:55:23 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/07 19:48:26 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/08 13:26:39 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,13 @@ void	do_moves(t_stack **stackfrom, t_stack **stackto, int val)
 	if (indexa > size_a / 2 && indexb > size_b / 2)
 		do_multiple_swap_rrr(stackfrom, stackto, node, val);
 	if (indexa <= size_a / 2)
-		do_multiple_swap_r(stackfrom, stackto, node, 'a');
+		do_multiple_swap_ra(stackto, node);
 	if (indexb <= size_b / 2)
-		do_multiple_swap_r(stackfrom, stackto, node, 'b');
+		do_multiple_swap_rb(stackfrom, val);
 	if (indexa > size_a / 2)
-		do_multiple_swap_rrs(stackfrom, stackto, node, 'a', val);
+		do_multiple_swap_rra(stackto, node);
 	if (indexb > size_b / 2)
-		do_multiple_swap_rrs(stackfrom, stackto, node, 'b', val);
+		do_multiple_swap_rrb(stackfrom, val);
 }
 
 void	pushtoa(t_stack **stackfrom, t_stack **stackto)

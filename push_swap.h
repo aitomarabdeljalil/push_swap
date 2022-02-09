@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 13:37:54 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/07 20:15:37 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/08 20:19:29 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ t_stack	*ft_stacklast(t_stack **stack);
 t_stack	*ft_stack_beforelast(t_stack **stack);
 t_stack	*ft_stacknew(int nbr);
 int		ft_stacksize(t_stack *stack);
+void	ft_stackclear(t_stack **stack);
 void	swap_ra(t_stack **stack);
 void	swap_rb(t_stack **stack);
 void	swap_rr(t_stack **stacka, t_stack **stackb);
