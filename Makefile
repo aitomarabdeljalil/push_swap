@@ -1,8 +1,10 @@
 CC		:= gcc
 CFLAGS	:= -Wall -Wextra -Werror
 OPR		:= ./operation
-ALG		:= ./algos
-SRC		:= ft_atoi.c ft_isdigit.c ft_stacksize.c 
+ALG		:= ./algo
+SRC		:= ft_stacklast.c ft_stacknew.c ft_stacksize.c\
+			ft_stack_beforelast.c ft_stackclear.c\
+			push_swap.c
 OBJ		:= $(patsubst %.c, %.o, $(SRC))
 
 .PHONY: all clean fclean re
@@ -10,6 +12,7 @@ OBJ		:= $(patsubst %.c, %.o, $(SRC))
 all: push_swap
 
 clean:
+	cd libft; clean;
 	rm -f $(OBJ)
 
 fclean: clean
