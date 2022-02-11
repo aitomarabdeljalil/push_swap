@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:27:43 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/10 19:51:48 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/11 18:47:05 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,16 @@ static t_stack	**check_and_getstack(int argc, char **argv)
 	while (i > 0)
 		stack = do_split(stack, argv[i--]);
 	return (stack);
+}
+
+void	do_action(char *str, t_stack **stack)
+{
+
+}
+
+char	*read_op()
+{
+	
 }
 
 int	main(int argc, char argv[][])
