@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_ra.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 17:19:11 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/12 19:31:16 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/03 16:01:07 by syakoubi          #+#    #+#             */
+/*   Updated: 2021/11/07 16:17:37 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	swap_ra(t_stack **stack)
+size_t	ft_strlen(const char *s)
 {
-	t_stack	*head;
-	t_stack	*second;
-	t_stack	*last;
+	size_t	i;
 
-	if (ft_stacksize(*stack) >= 2)
-	{
-		head = *stack;
-		second = head->next;
-		last = ft_stacklast(stack);
-		last->next = head;
-		head->next = NULL;
-		*stack = second;
-		write(1, "ra\n", 3);
-	}
-	else
-		write(1, "Error\n", 6);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

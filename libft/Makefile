@@ -1,9 +1,7 @@
 CC		:= gcc
 CFLAGS	:= -Wall -Wextra -Werror
 NAME	:= libft.a
-SRC		:= ft_atoi.c ft_isdigit.c ft_putchar_fd.c\
-			ft_putendl_fd.c ft_putnbr_fd.c\
-			ft_putstr_fd.c ft_split.c ft_strncmp.c
+SRC		:= ft_atoi.c ft_isdigit.c ft_split.c ft_strncmp.c ft_strlen.c ft_strjoin.c ft_strndup.c get_next_line.c
 OBJ		:= $(patsubst %.c, %.o, $(SRC))
 
 .PHONY: all clean fclean re bonus

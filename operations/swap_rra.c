@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 20:35:53 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/10 17:02:32 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/12 19:31:07 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	swap_rra(t_stack **stack)
 
 	if (ft_stacksize(*stack) >= 2)
 	{
-		last = ft_stacklast(*stack);
+		last = ft_stacklast(stack);
 		head = *stack;
 		beflast = ft_stack_beforelast(stack);
 		last->next = head;

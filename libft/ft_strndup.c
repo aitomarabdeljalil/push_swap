@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_ra.c                                          :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/12 17:19:11 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/12 19:31:16 by aait-oma         ###   ########.fr       */
+/*   Created: 2022/02/12 15:32:52 by aait-oma          #+#    #+#             */
+/*   Updated: 2022/02/12 15:33:14 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	swap_ra(t_stack **stack)
+char	*ft_strndup(const char *src, size_t size)
 {
-	t_stack	*head;
-	t_stack	*second;
-	t_stack	*last;
+	char	*copy;
 
-	if (ft_stacksize(*stack) >= 2)
-	{
-		head = *stack;
-		second = head->next;
-		last = ft_stacklast(stack);
-		last->next = head;
-		head->next = NULL;
-		*stack = second;
-		write(1, "ra\n", 3);
-	}
-	else
-		write(1, "Error\n", 6);
+	copy = malloc(size + 1);
+	if (copy == NULL)
+		return (NULL);
+	ft_strlcpy(copy, src, size + 1);
+	return (copy);
 }

@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 16:54:35 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/07 14:43:36 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/12 19:38:18 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	swap_pb(t_stack **stackfrom, t_stack **stackto)
 {
-	ft_push(stackto, ft_pop(stackfrom));
+	t_stack	*topop;
+
+	topop = ft_pop(stackfrom);
+	ft_push(stackto, topop->nbr);
 	write(1, "pb\n", 3);
 }

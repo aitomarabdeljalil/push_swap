@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 13:37:54 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/08 20:19:29 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/12 18:58:58 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-int		ft_atoi(const char *str);
-int		ft_isdigit(int c);
 int		ft_isemty(t_stack **stack);
 void	ft_push(t_stack **stack, int value);
 t_stack	*ft_pop(t_stack **stack);
@@ -50,6 +48,12 @@ void	ft_display(t_stack *stack, char c);
 int		best_markup(t_stack **stack);
 int		get_index(t_stack **stack, int val);
 void	alignstack(t_stack **stacka);
+void	do_multiple_swap_rr(t_stack **b, t_stack **a, t_stack *node, int val);
+void	do_multiple_swap_rrr(t_stack **b, t_stack **a, t_stack *node, int val);
+void	do_multiple_swap_ra(t_stack **a, t_stack *node);
+void	do_multiple_swap_rb(t_stack **b, int val);
+void	do_multiple_swap_rra(t_stack **a, t_stack *node);
+void	do_multiple_swap_rrb(t_stack **b, int val);
 void	pushtob(t_stack **stackfrom, t_stack **stackto);
 void	pushtoa(t_stack **stackfrom, t_stack **stackto);
 #endif

@@ -6,13 +6,13 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 22:07:14 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/07 14:18:55 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/12 18:13:25 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	swap_sa(t_stack **stack)
+static int	ft_swap_sa(t_stack **stack)
 {
 	t_stack	*head;
 	t_stack	*second;
@@ -30,7 +30,7 @@ static int	swap_sa(t_stack **stack)
 		return (0);
 }
 
-static int	swap_sb(t_stack **stack)
+static int	ft_swap_sb(t_stack **stack)
 {
 	t_stack	*head;
 	t_stack	*second;
@@ -53,8 +53,8 @@ void	swap_ss(t_stack **stacka, t_stack **stackb)
 	int	sa;
 	int	sb;
 
-	sa = swap_sa(stacka);
-	sb = swap_sb(stackb);
+	sa = ft_swap_sa(stacka);
+	sb = ft_swap_sb(stackb);
 	if (sa == 1 && sb == 1)
 		write(1, "ss\n", 3);
 	else

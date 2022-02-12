@@ -6,13 +6,13 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 22:26:28 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/07 14:38:25 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/12 19:30:57 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	swap_rra(t_stack **stack)
+static int	ft_swap_rra(t_stack **stack)
 {
 	t_stack	*head;
 	t_stack	*beflast;
@@ -20,7 +20,7 @@ static int	swap_rra(t_stack **stack)
 
 	if (ft_stacksize(*stack) > 2)
 	{
-		last = ft_stacklast(*stack);
+		last = ft_stacklast(stack);
 		head = *stack;
 		beflast = ft_stack_beforelast(stack);
 		last->next = head;
@@ -32,7 +32,7 @@ static int	swap_rra(t_stack **stack)
 		return (0);
 }
 
-static int	swap_rrb(t_stack **stack)
+static int	ft_swap_rrb(t_stack **stack)
 {
 	t_stack	*head;
 	t_stack	*beflast;
@@ -40,7 +40,7 @@ static int	swap_rrb(t_stack **stack)
 
 	if (ft_stacksize(*stack) > 2)
 	{
-		last = ft_stacklast(*stack);
+		last = ft_stacklast(stack);
 		head = *stack;
 		beflast = ft_stack_beforelast(stack);
 		last->next = head;
@@ -57,8 +57,8 @@ void	swap_rrr(t_stack **stacka, t_stack **stackb)
 	int	rra;
 	int	rrb;
 
-	rra = swap_rra(stacka);
-	rrb = swap_rrb(stackb);
+	rra = ft_swap_rra(stacka);
+	rrb = ft_swap_rrb(stackb);
 	if (rra == 1 && rrb == 1)
 		write(1, "rrr\n", 4);
 	else

@@ -6,14 +6,17 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:22:44 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/07 19:42:42 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/12 19:05:21 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	markup_clear(t_stack *head)
+void	markup_clear(t_stack **stack)
 {
+	t_stack	*head;
+
+	head = *stack;
 	if (head)
 	{
 		while (head)

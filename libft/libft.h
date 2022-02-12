@@ -6,12 +6,15 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 12:12:35 by aait-oma          #+#    #+#             */
-/*   Updated: 2021/11/20 10:39:11 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/12 15:32:23 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define BUFFER_SIZE 4096
+
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
@@ -51,6 +54,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	*ft_strndup(const char *src, size_t size);
+char	*get_next_line(int fd);
 
 typedef struct s_list
 {

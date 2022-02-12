@@ -6,11 +6,11 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 14:09:36 by syakoubi          #+#    #+#             */
-/*   Updated: 2021/12/27 17:14:40 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/12 15:34:41 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
