@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:22:44 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/12 19:05:21 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/13 19:13:53 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	markup(t_stack **stack, t_stack *start)
 
 	markup_clear(stack);
 	trueval = 1;
-	count = ft_stacksize(*stack) - 1;
+	count = ft_stacksize(*stack);
 	start->markup = true;
 	markup_val = start->nbr;
 	while (count--)

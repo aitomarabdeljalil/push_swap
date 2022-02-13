@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stacklast.c                                     :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 11:36:06 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/13 18:56:07 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/04 17:25:14 by syakoubi          #+#    #+#             */
+/*   Updated: 2021/11/12 22:02:24 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_stack	*ft_stacklast(t_stack **stack)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	t_stack	*stk;
+	unsigned char		*pdst;
+	const unsigned char	*psrc;
 
-	stk = *stack;
-	if (!ft_isemty(stack))
-	{
-		while (stk->next)
-			stk = stk->next;
-	}
-	return (stk);
+	pdst = dst;
+	psrc = src;
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	while (n--)
+		*(pdst++) = *(psrc++);
+	return (dst);
 }

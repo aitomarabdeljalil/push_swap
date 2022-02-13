@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:55:23 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/08 13:26:39 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/13 18:52:02 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	pushtoa(t_stack **stackfrom, t_stack **stackto)
 	int		best;
 	int		curent;
 
-	while (ft_isemty(stackfrom))
+	while (!ft_isemty(stackfrom))
 	{
 		tokeep = *stackfrom;
 		best = cal_moves(stackfrom, stackto, tokeep->nbr);

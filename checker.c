@@ -6,13 +6,32 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:27:43 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/12 20:02:24 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/13 17:16:34 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 #include <errno.h>
+
+bool	ft_issorted(t_stack **stacka, t_stack **stackb)
+{
+	if (!ft_isemty(stacka) && ft_isemty(stackb))
+	{
+		t_stack *node;
+
+		node = *stacka;
+		while (node)
+		{
+			if (node->next)
+				if (node->nbr > (node->next)->nbr)
+					return (false);
+			node = node->next;
+		}
+		return (true);
+	}
+	return (false);
+}
 
 static void	ft_memclean(t_stack **stack, char **array)
 {
@@ -115,13 +134,20 @@ void	read_op(t_stack **stacka, t_stack **stackb)
 	}
 }
 
-int	main(int argc, char **argv)
-{
-	t_stack	**a;
-	t_stack	**b;
+// int	main(int argc, char **argv)
+// {
+// 	t_stack	**a;
+// 	t_stack	**b;
+// 	bool	sorted;
 
-	if (argc < 2)
-		return (0);
-	b = NULL;
-	a = check_and_getstack(argc, argv);
-}
+// 	if (argc < 2)
+// 		return (0);
+// 	b = NULL;
+// 	a = check_and_getstack(argc, argv);
+// 	read_op(a, b);
+// 	sorted = ft_issorted(a, b);
+// 	if (sorted)
+// 		write(1, "OK\n", 3);
+// 	else
+// 		write(1, "KO\n", 3);
+// }

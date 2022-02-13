@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stacklast.c                                     :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 11:36:06 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/13 18:56:07 by aait-oma         ###   ########.fr       */
+/*   Created: 2021/11/05 12:38:19 by syakoubi          #+#    #+#             */
+/*   Updated: 2021/11/08 12:38:56 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_stack	*ft_stacklast(t_stack **stack)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	t_stack	*stk;
+	size_t	i;
 
-	stk = *stack;
-	if (!ft_isemty(stack))
+	i = 0;
+	if (dstsize != 0)
 	{
-		while (stk->next)
-			stk = stk->next;
+		while (src[i] != '\0' && i < dstsize - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	return (stk);
+	while (src[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
