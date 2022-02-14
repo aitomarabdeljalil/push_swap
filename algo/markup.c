@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:22:44 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/13 19:13:53 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/14 18:06:00 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,22 @@ int	markup(t_stack **stack, t_stack *start)
 	int	markup_val;
 
 	markup_clear(stack);
-	trueval = 1;
+	trueval = 0;
 	count = ft_stacksize(*stack);
-	start->markup = true;
 	markup_val = start->nbr;
 	while (count--)
 	{
-		start = start->next;
-		if (!start)
-			start = *stack;
-		if (markup_val < start->nbr)
+		if (start->nbr >= markup_val)
 		{
+			markup_val = start->nbr;
 			start->markup = true;
 			trueval++;
-			markup_val = start->nbr;
 		}
+		if (start->next)
+			start = start->next;
+		else
+			start = *stack;
+
 	}
 	return (trueval);
 }
@@ -60,13 +61,13 @@ int	best_markup(t_stack **stack)
 	int		best;
 	int		curent;
 
-	markup_head = *stack;
-	best = markup(stack, markup_head);
-	node = markup_head->next;
+	markup_head = NULL;
+	best = 0;
+	node = *stack;
 	while (node)
 	{
 		curent = markup(stack, node);
-		if (curent > best || (curent == best && markup_head->nbr > node->nbr))
+		if (curent > best || (curent == best && markup_head->nbr < node->nbr))
 		{
 			best = curent;
 			markup_head = node;

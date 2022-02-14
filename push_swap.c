@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 18:45:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/12 19:23:39 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/14 18:19:06 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
+	if (ac < 2)
+		return (0);
 	i = ac - 1;
 	while (i > 0)
 		ft_push(&a, ft_atoi(av[i--]));
@@ -48,10 +50,16 @@ int	main(int ac, char **av)
 	swap_sa_mark(&a);
 	markup_vals = best_markup(&a);
 	if (markup_val >= markup_vals)
+	{
 		swap_sa_mark(&a);
+		best_markup(&a);
+	}
 	else
 		write(1, "sa\n", 3);
 	pushtob(&a, &b);
 	pushtoa(&b, &a);
 	alignstack(&a);
+	ft_stackclear(&a);
+	ft_stackclear(&b);
+	return (0);
 }
