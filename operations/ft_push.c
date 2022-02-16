@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 19:09:37 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/07 14:43:51 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/15 17:10:59 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ void	ft_push(t_stack **stack, int value)
 	{
 		node->nbr = value;
 		node->markup = false;
-		node->next = *stack;
+		if (stack != NULL)
+			node->next = *stack;
+		else
+			node->next = NULL;
 		*stack = node;
 	}
 }

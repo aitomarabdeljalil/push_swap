@@ -6,15 +6,16 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:27:43 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/13 17:16:34 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/16 09:00:18 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 #include <errno.h>
+#include <stdio.h>
 
-bool	ft_issorted(t_stack **stacka, t_stack **stackb)
+static bool	ft_issorted(t_stack **stacka, t_stack **stackb)
 {
 	if (!ft_isemty(stacka) && ft_isemty(stackb))
 	{
@@ -44,7 +45,8 @@ static void	ft_memclean(t_stack **stack, char **array)
 			free(array[i]);
 		free(array);
 	}
-	ft_stackclear(stack);
+	if (stack)
+		ft_stackclear(stack);
 	write(2, "Error\n", 6);
 	exit(1);
 }
@@ -59,7 +61,7 @@ static int	tablen(char **array)
 	return (i);
 }
 
-static t_stack	**do_split(t_stack **stack, char *arg)
+void do_split(t_stack **stack, char *arg)
 {
 	char	**array;
 	int		i;
@@ -71,25 +73,23 @@ static t_stack	**do_split(t_stack **stack, char *arg)
 	i = tablen(array);
 	while (i--)
 	{
-		j = 0;
-		while (array[i])
-			if (!ft_isdigit(array[i][j++]))
+		j = -1;
+		while (array[i][++j])
+			if (!ft_isdigit(array[i][j]))
 				ft_memclean(stack, array);
 	}
 	i = tablen(array) - 1;
 	while (i >= 0)
 		ft_push(stack, ft_atoi(array[i--]));
-	return (stack);
 }
 
-static t_stack	**check_and_getstack(int argc, char **argv)
+static t_stack	*check_and_getstack(int argc, char **argv)
 {
-	t_stack	**stack;
-	int		i;
+	t_stack	*stack;
 
-	i = argc - 1;
-	while (i > 0)
-		stack = do_split(stack, argv[i--]);
+	stack = NULL;
+	while (argc > 0)
+		do_split(&stack, argv[--argc]);
 	return (stack);
 }
 
@@ -98,7 +98,7 @@ bool	do_action(char *str, t_stack **stacka, t_stack **stackb)
 	if (ft_strncmp(str, "sa\n", 3) == 0)
 		swap_sa(stacka);
 	else if (ft_strncmp(str, "sb\n", 3) == 0)
-		swap_sa(stackb);
+		swap_sb(stackb);
 	else if (ft_strncmp(str, "ss\n", 3) == 0)
 		swap_ss(stacka, stackb);
 	else if (ft_strncmp(str, "ra\n", 3) == 0)
@@ -113,6 +113,10 @@ bool	do_action(char *str, t_stack **stacka, t_stack **stackb)
 		swap_rrb(stackb);
 	else if (ft_strncmp(str, "rrr\n", 4) == 0)
 		swap_rrr(stacka, stackb);
+	else if (ft_strncmp(str, "pa\n", 3) == 0)
+		swap_pa(stackb, stacka);
+	else if (ft_strncmp(str, "pb\n", 3) == 0)
+		swap_pb(stacka, stackb);
 	else
 		return (false);
 	return (true);
@@ -134,20 +138,20 @@ void	read_op(t_stack **stacka, t_stack **stackb)
 	}
 }
 
-// int	main(int argc, char **argv)
-// {
-// 	t_stack	**a;
-// 	t_stack	**b;
-// 	bool	sorted;
+int	main(int argc, char **argv)
+{
+	t_stack	*a;
+	t_stack	*b;
+	bool	sorted;
 
-// 	if (argc < 2)
-// 		return (0);
-// 	b = NULL;
-// 	a = check_and_getstack(argc, argv);
-// 	read_op(a, b);
-// 	sorted = ft_issorted(a, b);
-// 	if (sorted)
-// 		write(1, "OK\n", 3);
-// 	else
-// 		write(1, "KO\n", 3);
-// }
+	if (argc < 2)
+		return (0);
+	b = NULL;
+	a = check_and_getstack(--argc, ++argv);
+	read_op(&a, &b);
+	sorted = ft_issorted(&a, &b);
+	if (sorted)
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
+}

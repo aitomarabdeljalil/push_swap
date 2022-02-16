@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 15:40:38 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/14 17:45:43 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/15 10:25:23 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	pushtob(t_stack **stackfrom, t_stack **stackto)
 {
 	t_stack	*node;
 
+	node = *stackfrom;
 	while (node)
 	{
 		node = *stackfrom;
