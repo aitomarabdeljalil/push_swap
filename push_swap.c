@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 18:45:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/16 09:05:40 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:40:58 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,17 @@ static int	swap_sa_mark(t_stack **stack)
 		return (0);
 }
 
+static void	todoswap(t_stack *a, int markup_vals, int markup_val)
+{
+	if (markup_val >= markup_vals)
+	{
+		swap_sa_mark(&a);
+		best_markup(&a);
+	}
+	else
+		write(1, "sa\n", 3);
+}
+
 int	main(int ac, char **av)
 {
 	t_stack	*a;
@@ -49,13 +60,7 @@ int	main(int ac, char **av)
 	markup_val = best_markup(&a);
 	swap_sa_mark(&a);
 	markup_vals = best_markup(&a);
-	if (markup_val >= markup_vals)
-	{
-		swap_sa_mark(&a);
-		best_markup(&a);
-	}
-	else
-		write(1, "sa\n", 3);
+	todoswap(a, markup_vals, markup_val);
 	pushtob(&a, &b);
 	pushtoa(&b, &a);
 	alignstack(&a);

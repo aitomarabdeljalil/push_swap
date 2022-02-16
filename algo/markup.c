@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:22:44 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/14 18:06:00 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/16 10:31:52 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int	markup(t_stack **stack, t_stack *start)
 			start = start->next;
 		else
 			start = *stack;
-
 	}
 	return (trueval);
 }
