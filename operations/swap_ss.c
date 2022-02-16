@@ -6,57 +6,16 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 22:07:14 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/12 18:13:25 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/16 18:12:06 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	ft_swap_sa(t_stack **stack)
+void	swap_ss(t_stack **stacka, t_stack **stackb, bool flag)
 {
-	t_stack	*head;
-	t_stack	*second;
-
-	if (ft_stacksize(*stack) >= 2)
-	{
-		head = *stack;
-		second = head->next;
-		head->next = second->next;
-		second->next = head;
-		*stack = second;
-		return (1);
-	}
-	else
-		return (0);
-}
-
-static int	ft_swap_sb(t_stack **stack)
-{
-	t_stack	*head;
-	t_stack	*second;
-
-	if (ft_stacksize(*stack) >= 2)
-	{
-		head = *stack;
-		second = head->next;
-		head->next = second->next;
-		second->next = head;
-		*stack = second;
-		return (1);
-	}
-	else
-		return (0);
-}
-
-void	swap_ss(t_stack **stacka, t_stack **stackb)
-{
-	int	sa;
-	int	sb;
-
-	sa = ft_swap_sa(stacka);
-	sb = ft_swap_sb(stackb);
-	if (sa == 1 && sb == 1)
+	swap_sa(stacka, false);
+	swap_sb(stackb, false);
+	if (flag)
 		write(1, "ss\n", 3);
-	else
-		write(1, "Error\n", 6);
 }

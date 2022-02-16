@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 12:17:20 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/07 20:12:06 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/16 18:48:12 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void	alignstack(t_stack **stacka)
 	index = get_index(stacka, min->nbr);
 	if (index <= size / 2)
 		while (index--)
-			swap_ra(stacka);
+			swap_ra(stacka, true);
 	else if (index > size / 2)
 		while (index++ < size)
-			swap_rra(stacka);
+			swap_rra(stacka, true);
 }

@@ -6,22 +6,20 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 13:27:43 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/16 09:00:18 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/16 18:14:28 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
-#include <errno.h>
-#include <stdio.h>
 
 static bool	ft_issorted(t_stack **stacka, t_stack **stackb)
 {
+	t_stack	*node;
+
+	node = *stacka;
 	if (!ft_isemty(stacka) && ft_isemty(stackb))
 	{
-		t_stack *node;
-
-		node = *stacka;
 		while (node)
 		{
 			if (node->next)
@@ -34,95 +32,36 @@ static bool	ft_issorted(t_stack **stacka, t_stack **stackb)
 	return (false);
 }
 
-static void	ft_memclean(t_stack **stack, char **array)
-{
-	int	i;
-
-	i = 0;
-	if (array != NULL)
-	{
-		while (array[i++])
-			free(array[i]);
-		free(array);
-	}
-	if (stack)
-		ft_stackclear(stack);
-	write(2, "Error\n", 6);
-	exit(1);
-}
-
-static int	tablen(char **array)
-{
-	int	i;
-
-	i = 0;
-	while (array[i])
-		i++;
-	return (i);
-}
-
-void do_split(t_stack **stack, char *arg)
-{
-	char	**array;
-	int		i;
-	int		j;
-
-	array = ft_split(arg, ' ');
-	if (!array || !array[0])
-		ft_memclean(NULL ,array);
-	i = tablen(array);
-	while (i--)
-	{
-		j = -1;
-		while (array[i][++j])
-			if (!ft_isdigit(array[i][j]))
-				ft_memclean(stack, array);
-	}
-	i = tablen(array) - 1;
-	while (i >= 0)
-		ft_push(stack, ft_atoi(array[i--]));
-}
-
-static t_stack	*check_and_getstack(int argc, char **argv)
-{
-	t_stack	*stack;
-
-	stack = NULL;
-	while (argc > 0)
-		do_split(&stack, argv[--argc]);
-	return (stack);
-}
-
-bool	do_action(char *str, t_stack **stacka, t_stack **stackb)
+static bool	do_action(char *str, t_stack **stacka, t_stack **stackb)
 {
 	if (ft_strncmp(str, "sa\n", 3) == 0)
-		swap_sa(stacka);
+		swap_sa(stacka, false);
 	else if (ft_strncmp(str, "sb\n", 3) == 0)
-		swap_sb(stackb);
+		swap_sb(stackb, false);
 	else if (ft_strncmp(str, "ss\n", 3) == 0)
-		swap_ss(stacka, stackb);
+		swap_ss(stacka, stackb, false);
 	else if (ft_strncmp(str, "ra\n", 3) == 0)
-		swap_ra(stacka);
+		swap_ra(stacka, false);
 	else if (ft_strncmp(str, "rb\n", 3) == 0)
-		swap_rb(stackb);
+		swap_rb(stackb, false);
 	else if (ft_strncmp(str, "rr\n", 3) == 0)
-		swap_rr(stacka, stackb);
+		swap_rr(stacka, stackb, false);
 	else if (ft_strncmp(str, "rra\n", 4) == 0)
-		swap_rra(stacka);
+		swap_rra(stacka, false);
 	else if (ft_strncmp(str, "rrb\n", 4) == 0)
-		swap_rrb(stackb);
+		swap_rrb(stackb, false);
 	else if (ft_strncmp(str, "rrr\n", 4) == 0)
-		swap_rrr(stacka, stackb);
+		swap_rrr(stacka, stackb, false);
 	else if (ft_strncmp(str, "pa\n", 3) == 0)
-		swap_pa(stackb, stacka);
+		swap_pa(stackb, stacka, false);
 	else if (ft_strncmp(str, "pb\n", 3) == 0)
-		swap_pb(stacka, stackb);
+		swap_pb(stacka, stackb, false);
 	else
 		return (false);
 	return (true);
 }
 
-void	read_op(t_stack **stacka, t_stack **stackb)
+static void	read_op(t_stack **stacka, t_stack **stackb)
 {
 	char	*line;
 	bool	success;

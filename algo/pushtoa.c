@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:55:23 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/14 16:44:28 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/16 18:50:01 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,6 @@ void	pushtoa(t_stack **stackfrom, t_stack **stackto)
 			node = node->next;
 		}
 		do_moves(stackfrom, stackto, tokeep->nbr);
-		swap_pa(stackfrom, stackto);
+		swap_pa(stackfrom, stackto, true);
 	}
 }

@@ -6,13 +6,13 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 22:00:16 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/07 14:18:10 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/16 18:03:24 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	swap_sa(t_stack **stack)
+void	swap_sa(t_stack **stack, bool flag)
 {
 	t_stack	*head;
 	t_stack	*second;
@@ -24,8 +24,7 @@ void	swap_sa(t_stack **stack)
 		head->next = second->next;
 		second->next = head;
 		*stack = second;
-		write(1, "sa\n", 3);
+		if (flag)
+			write(1, "sa\n", 3);
 	}
-	else
-		write(1, "Error\n", 6);
 }
