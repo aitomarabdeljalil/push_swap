@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 13:37:54 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/16 18:09:43 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/20 15:09:16 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdbool.h>
 # include <limits.h>
 # include <errno.h>
+# include "libft/libft.h"
 
 typedef struct s_stack
 {

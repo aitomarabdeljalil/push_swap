@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:19:30 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/16 17:18:19 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/20 17:22:14 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,12 @@ static void	do_split(t_stack **stack, char *arg)
 	{
 		j = -1;
 		while (array[i][++j])
+		{
+			if (array[i][0] == '-')
+				j++;
 			if (!ft_isdigit(array[i][j]))
 				ft_memclean(stack, array);
+		}
 	}
 	i = tablen(array) - 1;
 	while (i >= 0)
