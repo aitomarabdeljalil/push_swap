@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 11:22:44 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/16 10:31:52 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/21 15:26:08 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,11 @@ int	best_markup(t_stack **stack)
 		curent = markup(stack, node);
 		if (curent > best || (curent == best && markup_head->nbr < node->nbr))
 		{
-			best = curent;
 			markup_head = node;
+			best = curent;
 		}
 		node = node->next;
 	}
-	best = markup(stack, markup_head);
+	markup(stack, markup_head);
 	return (best);
 }

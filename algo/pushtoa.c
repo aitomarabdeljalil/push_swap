@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 16:55:23 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/16 18:50:01 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/22 14:07:00 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	cal_moves(t_stack **stackfrom, t_stack **stackto, int val)
 	t_stack	*node;
 
 	size_b = ft_stacksize(*stackfrom);
-	size_a = ft_stacksize(*stackfrom);
+	size_a = ft_stacksize(*stackto);
 	indexb = get_index(stackfrom, val);
 	node = get_item(stackto, val);
 	indexa = get_index(stackto, node->nbr);
@@ -67,7 +67,7 @@ void	do_moves(t_stack **stackfrom, t_stack **stackto, int val)
 	t_stack	*node;
 
 	size_b = ft_stacksize(*stackfrom);
-	size_a = ft_stacksize(*stackfrom);
+	size_a = ft_stacksize(*stackto);
 	indexb = get_index(stackfrom, val);
 	node = get_item(stackto, val);
 	indexa = get_index(stackto, node->nbr);
