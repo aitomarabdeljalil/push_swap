@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 13:37:54 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/20 15:09:16 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/23 17:14:05 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,5 @@ void	pushtob(t_stack **stackfrom, t_stack **stackto);
 void	pushtoa(t_stack **stackfrom, t_stack **stackto);
 void	ft_memclean(t_stack **stack, char **array);
 t_stack	*check_and_getstack(int argc, char **argv);
+void	ft_tofree(char **array);
 #endif

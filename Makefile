@@ -6,9 +6,9 @@ COMMON	:= ft_stack_beforelast.c ft_stackclear.c ft_stacklast.c ft_stacknew.c ft_
 			operations/swap_ra.c operations/swap_rb.c operations/swap_rr.c\
 			operations/swap_rra.c operations/swap_rrb.c operations/swap_rrr.c\
 			operations/swap_sa.c operations/swap_sb.c operations/swap_ss.c\
-			analyse/check_and_getstack.c
+			analyse/check_and_getstack.c analyse/ft_tofree.c
 SRC		:= $(COMMON) push_swap.c algo/align.c algo/index.c algo/markup.c algo/pushtoa.c algo/pushtob.c algo/utils_rr.c algo/utils_rrr.c
-BSRC	:= $(COMMON) checker.c
+BSRC	:= $(COMMON) checker.c algo/index.c
 OBJ		:= $(patsubst %.c, %.o, $(SRC))
 NAME	:= push_swap
 BNAME	:= checker
@@ -23,7 +23,7 @@ clean:
 
 fclean:
 	make -C libft fclean
-	rm -f $(OBJ) $(NAME)
+	rm -f $(OBJ) $(NAME) $(BNAME)
 
 re: fclean all
 

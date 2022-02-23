@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:19:30 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/22 19:45:36 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/23 17:15:54 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,11 @@ void	ft_memclean(t_stack **stack, char **array)
 	exit(1);
 }
 
-bool	ft_isnumber(char *str)
+static bool	ft_isnumber(char *str)
 {
 	int	i;
 
 	i = 0;
-
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	if (!str[i])
@@ -62,8 +61,7 @@ static void	do_split(t_stack **stack, char *arg)
 {
 	char	**array;
 	int		i;
-	int nbr;
-
+	int		nbr;
 
 	array = ft_split(arg, ' ');
 	if (!array || !array[0])
@@ -79,6 +77,7 @@ static void	do_split(t_stack **stack, char *arg)
 			ft_memclean(stack, array);
 		ft_push(stack, nbr);
 	}
+	ft_tofree(array);
 }
 
 t_stack	*check_and_getstack(int argc, char **argv)

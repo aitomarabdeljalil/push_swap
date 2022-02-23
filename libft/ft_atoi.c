@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 12:42:11 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/22 19:40:00 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/23 14:54:36 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ int	ft_atoi(const char *str)
 	while (ft_isdigit(*str))
 		result = result * 10 + (*(str++) - 48) * sign;
 	if (result > INT_MAX || result < INT_MIN)
-        errno = 1;
+		errno = 1;
 	return (result);
 }

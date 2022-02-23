@@ -6,12 +6,23 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 18:45:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/22 18:15:16 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/23 17:30:52 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
+
+static void	check_sa(t_stack **a, int val, int val_s)
+{
+	if (val >= val_s)
+	{
+		swap_sa(a, false);
+		best_markup(a);
+	}
+	else
+		write(1, "sa\n", 3);
+}
 
 int	main(int ac, char **av)
 {
@@ -28,13 +39,7 @@ int	main(int ac, char **av)
 	markup_val = best_markup(&a);
 	swap_sa(&a, false);
 	markup_vals = best_markup(&a);
-	if (markup_val >= markup_vals)
-	{
-		swap_sa(&a, false);
-		best_markup(&a);
-	}
-	else
-		write(1, "sa\n", 3);
+	check_sa(&a, markup_val, markup_vals);
 	pushtob(&a, &b);
 	pushtoa(&b, &a);
 	alignstack(&a);
