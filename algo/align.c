@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/05 12:17:20 by aait-oma          #+#    #+#             */
-/*   Updated: 2022/02/16 18:48:12 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/02/24 09:01:32 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,7 @@ void	alignstack(t_stack **stacka)
 	int		index;
 	t_stack	*min;
 	int		size;
-	t_stack	*node;
 
-	node = *stacka;
 	size = ft_stacksize(*stacka);
 	min = ft_min(stacka);
 	index = get_index(stacka, min->nbr);
