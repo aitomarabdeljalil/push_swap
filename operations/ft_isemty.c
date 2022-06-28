@@ -6,7 +6,7 @@
 /*   By: aait-oma <aait-oma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 19:28:24 by marvin            #+#    #+#             */
-/*   Updated: 2022/02/13 11:07:25 by aait-oma         ###   ########.fr       */
+/*   Updated: 2022/06/28 10:14:15 by aait-oma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isemty(t_stack **stack)
 {
-	if (*stack)
+	if (!*stack)
 		return (0);
 	else
 		return (1);
